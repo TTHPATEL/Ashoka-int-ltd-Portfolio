@@ -112,15 +112,14 @@ const Footer = () => {
                   </p>
                   <p>Industrial area, P.O.Box 20144</p>
                   <p>Kampala Uganda</p>
-                  {/* 123 Business Address, City, Country */}
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone className="mr-2 h-5 w-5 text-ashoka-orange" />
                 <span className="text-gray-300">+256 742 092892</span>
               </li>
-              <li className="flex items-center">
-                <Mail className="mr-2 h-5 w-5 text-ashoka-orange" />
+              <li className="flex items-start">
+                <Mail className="mr-2 h-5 w-5 min-w-[20px] text-ashoka-orange mt-1" />
                 <span className="text-gray-300">
                   ashokainternational07@gmail.com
                 </span>

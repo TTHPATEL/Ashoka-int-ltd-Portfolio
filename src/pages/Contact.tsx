@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Clock, Mail, MapPin, Phone, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -17,7 +16,9 @@ const Contact = () => {
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -25,13 +26,13 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form data submitted:", formData);
-    
+
     // Show toast notification
     toast({
       title: "Message Sent!",
       description: "Thank you for contacting us. We'll get back to you soon.",
     });
-    
+
     // Reset form
     setFormData({
       name: "",
@@ -49,7 +50,8 @@ const Contact = () => {
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
             <p className="text-xl max-w-3xl mx-auto">
-              Get in touch with us for inquiries, quotes, or to learn more about our products.
+              Get in touch with us for inquiries, quotes, or to learn more about
+              our products.
             </p>
           </div>
         </div>
@@ -67,12 +69,12 @@ const Contact = () => {
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-ashoka-dark mb-3">Our Location</h3>
-                <p className="text-ashoka-gray">
-                  123 Business Address<br />
-                  City, State 12345<br />
-                  Country
-                </p>
+                <h3 className="text-xl font-semibold text-ashoka-dark mb-3">
+                  Our Location
+                </h3>
+                <p>Plot No. 3, Mulwana (Kibira) road</p>
+                <p>Industrial area, P.O.Box 20144</p>
+                <p>Kampala Uganda</p>
               </CardContent>
             </Card>
 
@@ -84,12 +86,15 @@ const Contact = () => {
                     <Phone className="h-6 w-6 text-white" />
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-ashoka-dark mb-3">Contact Info</h3>
+                <h3 className="text-xl font-semibold text-ashoka-dark mb-3">
+                  Contact Info
+                </h3>
                 <p className="text-ashoka-gray mb-2">
-                  <span className="font-medium">Phone:</span> +1 234 567 8900
+                  <span className="font-medium">Phone:</span> +256 742 092892
                 </p>
                 <p className="text-ashoka-gray">
-                  <span className="font-medium">Email:</span> info@ashokaintl.com
+                  <span className="font-medium">Email:</span>{" "}
+                  ashokainternational07@gmail.com
                 </p>
               </CardContent>
             </Card>
@@ -102,13 +107,17 @@ const Contact = () => {
                     <Clock className="h-6 w-6 text-white" />
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-ashoka-dark mb-3">Business Hours</h3>
+                <h3 className="text-xl font-semibold text-ashoka-dark mb-3">
+                  Business Hours
+                </h3>
                 <p className="text-ashoka-gray mb-2">
-                  <span className="font-medium">Monday - Friday:</span><br />
+                  <span className="font-medium">Monday - Friday:</span>
+                  <br />
                   8:00 AM - 6:00 PM
                 </p>
                 <p className="text-ashoka-gray">
-                  <span className="font-medium">Saturday:</span><br />
+                  <span className="font-medium">Saturday:</span>
+                  <br />
                   9:00 AM - 4:00 PM
                 </p>
               </CardContent>
@@ -118,7 +127,9 @@ const Contact = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             {/* Contact Form */}
             <div>
-              <h2 className="text-2xl font-bold text-ashoka-dark mb-6">Send Us a Message</h2>
+              <h2 className="text-2xl font-bold text-ashoka-dark mb-6">
+                Send Us a Message
+              </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="name">Your Name</Label>
@@ -162,7 +173,10 @@ const Contact = () => {
                     required
                   />
                 </div>
-                <Button type="submit" className="w-full bg-ashoka-blue hover:bg-ashoka-dark">
+                <Button
+                  type="submit"
+                  className="w-full bg-ashoka-blue hover:bg-ashoka-dark"
+                >
                   <Send className="mr-2 h-4 w-4" />
                   Send Message
                 </Button>
@@ -171,11 +185,25 @@ const Contact = () => {
 
             {/* Map */}
             <div>
-              <h2 className="text-2xl font-bold text-ashoka-dark mb-6">Our Location</h2>
-              <div className="h-96 bg-gray-300 rounded"></div>
+              <h2 className="text-2xl font-bold text-ashoka-dark mb-6">
+                Our Location
+              </h2>
+              <div className="mt-4">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1994.8791784566804!2d32.61193035537735!3d0.31412669636261137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1747835533592!5m2!1sen!2sin"
+                  width="100%"
+                  height="500"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="rounded-lg shadow-md"
+                ></iframe>
+              </div>
               <p className="mt-4 text-ashoka-gray">
                 <MapPin className="inline-block mr-2 h-5 w-5 text-ashoka-blue" />
-                123 Business Address, City, State 12345, Country
+                Plot No. 3, Mulwana (Kibira) road Industrial area, P.O.Box 20144
+                Kampala Uganda
               </p>
             </div>
           </div>
@@ -186,7 +214,9 @@ const Contact = () => {
       <section className="py-16 bg-ashoka-lightgray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-ashoka-dark mb-2">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-ashoka-dark mb-2">
+              Frequently Asked Questions
+            </h2>
             <p className="text-ashoka-gray max-w-2xl mx-auto">
               Find answers to common questions about our products and services.
             </p>
@@ -196,9 +226,13 @@ const Contact = () => {
             {/* FAQ Item 1 */}
             <Card className="shadow-md">
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-ashoka-dark mb-2">Do you offer delivery services?</h3>
+                <h3 className="text-lg font-semibold text-ashoka-dark mb-2">
+                  Do you offer delivery services?
+                </h3>
                 <p className="text-ashoka-gray">
-                  Yes, we offer delivery services for orders above a certain value. Delivery charges may apply based on your location and order size. Please contact us for specific details.
+                  Yes, we offer delivery services for orders above a certain
+                  value. Delivery charges may apply based on your location and
+                  order size. Please contact us for specific details.
                 </p>
               </CardContent>
             </Card>
@@ -206,9 +240,13 @@ const Contact = () => {
             {/* FAQ Item 2 */}
             <Card className="shadow-md">
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-ashoka-dark mb-2">What payment methods do you accept?</h3>
+                <h3 className="text-lg font-semibold text-ashoka-dark mb-2">
+                  What payment methods do you accept?
+                </h3>
                 <p className="text-ashoka-gray">
-                  We accept various payment methods including cash, credit/debit cards, bank transfers, and mobile money. Corporate clients can also set up credit accounts with proper documentation.
+                  We accept various payment methods including cash, credit/debit
+                  cards, bank transfers, and mobile money. Corporate clients can
+                  also set up credit accounts with proper documentation.
                 </p>
               </CardContent>
             </Card>
@@ -216,9 +254,14 @@ const Contact = () => {
             {/* FAQ Item 3 */}
             <Card className="shadow-md">
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-ashoka-dark mb-2">Can I return products if they don't meet my requirements?</h3>
+                <h3 className="text-lg font-semibold text-ashoka-dark mb-2">
+                  Can I return products if they don't meet my requirements?
+                </h3>
                 <p className="text-ashoka-gray">
-                  We have a return policy for products in their original condition. Returns must be made within 7 days of purchase with a valid receipt. Please note that some products may not be eligible for return.
+                  We have a return policy for products in their original
+                  condition. Returns must be made within 7 days of purchase with
+                  a valid receipt. Please note that some products may not be
+                  eligible for return.
                 </p>
               </CardContent>
             </Card>
@@ -226,9 +269,13 @@ const Contact = () => {
             {/* FAQ Item 4 */}
             <Card className="shadow-md">
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-ashoka-dark mb-2">Do you offer bulk discounts?</h3>
+                <h3 className="text-lg font-semibold text-ashoka-dark mb-2">
+                  Do you offer bulk discounts?
+                </h3>
                 <p className="text-ashoka-gray">
-                  Yes, we offer discounts for bulk purchases. The discount rates vary depending on the products and quantities. Please contact our sales team to discuss your specific requirements.
+                  Yes, we offer discounts for bulk purchases. The discount rates
+                  vary depending on the products and quantities. Please contact
+                  our sales team to discuss your specific requirements.
                 </p>
               </CardContent>
             </Card>
@@ -240,12 +287,15 @@ const Contact = () => {
       <section className="py-16 bg-ashoka-blue text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4">Need Immediate Assistance?</h2>
+            <h2 className="text-3xl font-bold mb-4">
+              Need Immediate Assistance?
+            </h2>
             <p className="max-w-2xl mx-auto mb-8 text-blue-100">
-              Our customer service team is available to help you with any questions or concerns.
+              Our customer service team is available to help you with any
+              questions or concerns.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button 
+              <Button
                 className="bg-white text-ashoka-blue hover:bg-ashoka-orange hover:text-white"
                 asChild
               >
@@ -254,7 +304,7 @@ const Contact = () => {
                   Call Us Now
                 </a>
               </Button>
-              <Button 
+              <Button
                 variant="outline"
                 className="bg-transparent text-white border-white hover:bg-white hover:text-ashoka-blue"
                 asChild
