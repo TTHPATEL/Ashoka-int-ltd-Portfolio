@@ -2,13 +2,53 @@ import { Link } from "react-router-dom";
 import { Download, ExternalLink, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import bgImage from "../assets/images/IMAGE2.jpg"; // Adjust the path as needed
+import aboutImage from "../assets/images/Ashoka_Logo.jpg"; // Adjust path as needed
+import constructionImg from "../assets/images/catergory/CSM_Images.jpg"; // adjust path as needed
+import paintingImg from "../assets/images/catergory/Painting.jpg"; // adjust path as needed
+import tool_and_equip_img from "../assets/images/catergory/Tools_and_Equip.jpg"; // adjust path as needed
 
 const Home = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-ashoka-blue to-blue-900 text-white">
+      {/* <section className="relative bg-gradient-to-r from-ashoka-blue to-blue-900 text-white">
         <div className="absolute inset-0 bg-black opacity-30"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              Complete Hardware Solutions
+            </h1>
+            <p className="text-xl mb-8">
+              Ashoka International Ltd offers a complete range of quality
+              hardware products and construction materials under one roof.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button
+                className="bg-ashoka-orange hover:bg-white hover:text-ashoka-orange text-white"
+                asChild
+              >
+                <Link to="/products">Browse Products</Link>
+              </Button>
+              <Button
+                variant="outline"
+                className="bg-transparent text-white border-white hover:bg-white hover:text-ashoka-blue"
+                asChild
+              >
+                <Link to="/contact">Contact Us</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section> */}
+      <section
+        className="relative bg-cover bg-center text-white"
+        style={{
+          backgroundImage: `url(${bgImage})`,
+        }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -53,7 +93,10 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Category 1 */}
             <Card className="overflow-hidden shadow-lg transition-transform hover:scale-105">
-              <div className="h-48 bg-gray-300 relative">
+              <div
+                className="h-48 bg-cover bg-center relative"
+                style={{ backgroundImage: `url(${constructionImg})` }}
+              >
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
                 <div className="absolute bottom-4 left-4 right-4">
                   <h3 className="text-white text-xl font-bold">
@@ -61,6 +104,7 @@ const Home = () => {
                   </h3>
                 </div>
               </div>
+
               <CardContent className="p-6">
                 <ul className="space-y-1 mb-4 text-ashoka-gray">
                   <li>Steel Bars</li>
@@ -81,7 +125,10 @@ const Home = () => {
 
             {/* Category 2 */}
             <Card className="overflow-hidden shadow-lg transition-transform hover:scale-105">
-              <div className="h-48 bg-gray-300 relative">
+              <div
+                className="h-48 bg-cover bg-center relative"
+                style={{ backgroundImage: `url(${paintingImg})` }}
+              >
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
                 <div className="absolute bottom-4 left-4 right-4">
                   <h3 className="text-white text-xl font-bold">
@@ -89,6 +136,7 @@ const Home = () => {
                   </h3>
                 </div>
               </div>
+
               <CardContent className="p-6">
                 <ul className="space-y-1 mb-4 text-ashoka-gray">
                   <li>Plascon Paint</li>
@@ -102,14 +150,17 @@ const Home = () => {
                   className="w-full border-ashoka-blue text-ashoka-blue hover:bg-ashoka-blue hover:text-white"
                   asChild
                 >
-                  <Link to="/products#paint">View All</Link>
+                  <Link to="/products#construction">View All</Link>
                 </Button>
               </CardContent>
             </Card>
 
             {/* Category 3 */}
             <Card className="overflow-hidden shadow-lg transition-transform hover:scale-105">
-              <div className="h-48 bg-gray-300 relative">
+              <div
+                className="h-48 bg-cover bg-center relative"
+                style={{ backgroundImage: `url(${tool_and_equip_img})` }}
+              >
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
                 <div className="absolute bottom-4 left-4 right-4">
                   <h3 className="text-white text-xl font-bold">
@@ -117,6 +168,7 @@ const Home = () => {
                   </h3>
                 </div>
               </div>
+
               <CardContent className="p-6">
                 <ul className="space-y-1 mb-4 text-ashoka-gray">
                   <li>Power Tools</li>
@@ -130,7 +182,7 @@ const Home = () => {
                   className="w-full border-ashoka-blue text-ashoka-blue hover:bg-ashoka-blue hover:text-white"
                   asChild
                 >
-                  <Link to="/products#tools">View All</Link>
+                  <Link to="/products#construction">View All</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -168,7 +220,14 @@ const Home = () => {
                 <Link to="/about">Learn More About Us</Link>
               </Button>
             </div>
-            <div className="bg-gray-300 h-80 rounded-lg"></div>
+
+            <div className="bg-gray-300 h-80 rounded-lg">
+              <img
+                src={aboutImage}
+                alt="Inside Ashoka Warehouse"
+                className="w-full h-80 object-cover rounded-lg shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </section>

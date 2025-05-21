@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import HeaderLogo from "../assets/images/Ashoka_Header_Logo.jpg"; // Adjust path as needed
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,11 +17,24 @@ const Navbar = () => {
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <img
+              {/* <img
                 src="/lovable-uploads/96853bb4-77fd-420c-a2d7-3051ea1fe292.png"
                 alt="Ashoka International Logo"
                 className="h-12 w-auto"
+              /> */}
+              <img
+                src={HeaderLogo}
+                alt="Ashoka International Logo"
+                className="h-12 w-auto"
               />
+              {/* <img
+                src="/lovable-uploads/96853bb4-77fd-420c-a2d7-3051ea1fe292.png"
+                alt="Ashoka International Logo"
+                className="logo-img"
+              /> */}
+              <h1 className="text-2xl font-bold pl-8">
+                Ashoka International Ltd
+              </h1>
             </Link>
           </div>
 

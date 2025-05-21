@@ -1,23 +1,20 @@
 import { Award, CheckCircle, Users, Warehouse } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import IMAGE1 from "../assets/images/IMAGE1.jpg"; // adjust path as needed
 
 const About = () => {
   return (
     <div>
       {/* Header Section */}
-      <section 
-        className="bg-ashoka-blue text-white py-16 bg-cover bg-center"
-        style={{ 
-          backgroundImage: 'linear-gradient(rgba(0, 0, 51, 0.7), rgba(0, 0, 51, 0.7)), url("https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")',
-          backgroundPosition: 'center',
-          backgroundSize: 'cover'
-        }}
-      >
+      <section className="bg-ashoka-blue text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl font-bold mb-4">About Ashoka International Ltd</h1>
+            <h1 className="text-4xl font-bold mb-4">
+              About Ashoka International Ltd
+            </h1>
             <p className="text-xl max-w-3xl mx-auto">
-              A trusted name in hardware, serving clients with quality products for over 15 years.
+              A trusted name in hardware, serving clients with quality products
+              for over 15 years.
             </p>
           </div>
         </div>
@@ -27,30 +24,37 @@ const About = () => {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div 
+            <div
               className="h-80 rounded-lg bg-cover bg-center"
-              style={{ 
-                backgroundImage: 'url("https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")'
+              style={{
+                backgroundImage: `url(${IMAGE1})`,
               }}
             ></div>
             <div>
               <div className="mb-6">
-                <h2 className="text-3xl font-bold text-ashoka-dark mb-4">Our Story</h2>
+                <h2 className="text-3xl font-bold text-ashoka-dark mb-4">
+                  Our Story
+                </h2>
                 <div className="h-1 w-20 bg-ashoka-orange"></div>
               </div>
               <p className="text-ashoka-gray mb-6">
-                Founded in 2010, Ashoka International Ltd started as a small hardware store with a big vision 
-                - to provide complete hardware solutions to the construction industry. Over the years, we have 
-                grown significantly, expanding our product range and customer base.
+                Founded in 2010, Ashoka International Ltd started as a small
+                hardware store with a big vision - to provide complete hardware
+                solutions to the construction industry. Over the years, we have
+                grown significantly, expanding our product range and customer
+                base.
               </p>
               <p className="text-ashoka-gray mb-6">
-                Today, we are proud to be one of the leading hardware suppliers in the region, known for our 
-                quality products, competitive pricing, and excellent customer service. Our extensive inventory 
-                includes everything from construction materials to painting supplies and tools.
+                Today, we are proud to be one of the leading hardware suppliers
+                in the region, known for our quality products, competitive
+                pricing, and excellent customer service. Our extensive inventory
+                includes everything from construction materials to painting
+                supplies and tools.
               </p>
               <p className="text-ashoka-gray">
-                At Ashoka International, we believe in building long-term relationships with our customers by 
-                consistently meeting their needs and exceeding their expectations.
+                At Ashoka International, we believe in building long-term
+                relationships with our customers by consistently meeting their
+                needs and exceeding their expectations.
               </p>
             </div>
           </div>
@@ -61,7 +65,9 @@ const About = () => {
       <section className="py-16 bg-ashoka-lightgray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-ashoka-dark mb-2">Our Mission & Values</h2>
+            <h2 className="text-3xl font-bold text-ashoka-dark mb-2">
+              Our Mission & Values
+            </h2>
             <p className="text-ashoka-gray max-w-2xl mx-auto">
               What drives us and the principles we uphold in our business.
             </p>
@@ -70,47 +76,65 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Mission */}
             <Card className="p-8 shadow-md">
-              <h3 className="text-2xl font-bold text-ashoka-blue mb-4">Our Mission</h3>
+              <h3 className="text-2xl font-bold text-ashoka-blue mb-4">
+                Our Mission
+              </h3>
               <p className="text-ashoka-gray mb-6">
-                To provide high-quality hardware and construction materials that meet the diverse needs of our 
-                customers, while offering excellent service, expert advice, and competitive pricing.
+                To provide high-quality hardware and construction materials that
+                meet the diverse needs of our customers, while offering
+                excellent service, expert advice, and competitive pricing.
               </p>
               <p className="text-ashoka-gray">
-                We aim to be the one-stop solution for all hardware requirements, making the construction and 
-                renovation process smoother and more efficient for our clients.
+                We aim to be the one-stop solution for all hardware
+                requirements, making the construction and renovation process
+                smoother and more efficient for our clients.
               </p>
             </Card>
 
             {/* Values */}
             <Card className="p-8 shadow-md">
-              <h3 className="text-2xl font-bold text-ashoka-blue mb-4">Our Values</h3>
+              <h3 className="text-2xl font-bold text-ashoka-blue mb-4">
+                Our Values
+              </h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-ashoka-orange mr-2 flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="font-semibold text-ashoka-dark">Quality</p>
-                    <p className="text-ashoka-gray">We source only the best products from trusted manufacturers.</p>
+                    <p className="text-ashoka-gray">
+                      We source only the best products from trusted
+                      manufacturers.
+                    </p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-ashoka-orange mr-2 flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="font-semibold text-ashoka-dark">Integrity</p>
-                    <p className="text-ashoka-gray">We conduct our business with honesty and transparency.</p>
+                    <p className="text-ashoka-gray">
+                      We conduct our business with honesty and transparency.
+                    </p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-ashoka-orange mr-2 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-ashoka-dark">Customer Focus</p>
-                    <p className="text-ashoka-gray">We prioritize customer satisfaction in everything we do.</p>
+                    <p className="font-semibold text-ashoka-dark">
+                      Customer Focus
+                    </p>
+                    <p className="text-ashoka-gray">
+                      We prioritize customer satisfaction in everything we do.
+                    </p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-ashoka-orange mr-2 flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="font-semibold text-ashoka-dark">Innovation</p>
-                    <p className="text-ashoka-gray">We continuously update our product range to meet changing market needs.</p>
+                    <p className="text-ashoka-gray">
+                      We continuously update our product range to meet changing
+                      market needs.
+                    </p>
                   </div>
                 </li>
               </ul>
@@ -123,7 +147,9 @@ const About = () => {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-ashoka-dark mb-2">Why Choose Ashoka International</h2>
+            <h2 className="text-3xl font-bold text-ashoka-dark mb-2">
+              Why Choose Ashoka International
+            </h2>
             <p className="text-ashoka-gray max-w-2xl mx-auto">
               Here's what sets us apart from other hardware suppliers.
             </p>
@@ -141,7 +167,8 @@ const About = () => {
                 Comprehensive Inventory
               </h3>
               <p className="text-ashoka-gray">
-                We stock a wide range of products, offering a one-stop solution for all your hardware and construction needs.
+                We stock a wide range of products, offering a one-stop solution
+                for all your hardware and construction needs.
               </p>
             </Card>
 
@@ -156,7 +183,8 @@ const About = () => {
                 Quality Guaranteed
               </h3>
               <p className="text-ashoka-gray">
-                We source our products from trusted manufacturers, ensuring you receive only the best quality materials.
+                We source our products from trusted manufacturers, ensuring you
+                receive only the best quality materials.
               </p>
             </Card>
 
@@ -171,7 +199,8 @@ const About = () => {
                 Expert Advice
               </h3>
               <p className="text-ashoka-gray">
-                Our knowledgeable staff provides expert guidance to help you choose the right products for your projects.
+                Our knowledgeable staff provides expert guidance to help you
+                choose the right products for your projects.
               </p>
             </Card>
           </div>
@@ -179,93 +208,118 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 bg-ashoka-lightgray">
+      {/* <section className="py-16 bg-ashoka-lightgray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-ashoka-dark mb-2">Our Team</h2>
+            <h2 className="text-3xl font-bold text-ashoka-dark mb-2">
+              Our Team
+            </h2>
             <p className="text-ashoka-gray max-w-2xl mx-auto">
               Meet the dedicated professionals behind Ashoka International Ltd.
             </p>
-          </div>
+          </div> */}
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {/* Team Member 1 */}
-            <div className="text-center">
-              <div 
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"> */}
+      {/* Team Member 1 */}
+      {/* <div className="text-center">
+              <div
                 className="mb-4 h-64 rounded-lg bg-cover bg-center"
-                style={{ 
-                  backgroundImage: 'url("https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80")'
+                style={{
+                  backgroundImage:
+                    'url("https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80")',
                 }}
               ></div>
-              <h3 className="text-xl font-semibold text-ashoka-dark">John Smith</h3>
+              <h3 className="text-xl font-semibold text-ashoka-dark">
+                John Smith
+              </h3>
               <p className="text-ashoka-gray">Founder & CEO</p>
-            </div>
+            </div> */}
 
-            {/* Team Member 2 */}
-            <div className="text-center">
-              <div 
+      {/* Team Member 2 */}
+      {/* <div className="text-center">
+              <div
                 className="mb-4 h-64 rounded-lg bg-cover bg-center"
-                style={{ 
-                  backgroundImage: 'url("https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80")'
+                style={{
+                  backgroundImage:
+                    'url("https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80")',
                 }}
               ></div>
-              <h3 className="text-xl font-semibold text-ashoka-dark">Sarah Johnson</h3>
+              <h3 className="text-xl font-semibold text-ashoka-dark">
+                Sarah Johnson
+              </h3>
               <p className="text-ashoka-gray">Operations Manager</p>
-            </div>
+            </div> */}
 
-            {/* Team Member 3 */}
-            <div className="text-center">
-              <div 
+      {/* Team Member 3 */}
+      {/* <div className="text-center">
+              <div
                 className="mb-4 h-64 rounded-lg bg-cover bg-center"
-                style={{ 
-                  backgroundImage: 'url("https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80")'
+                style={{
+                  backgroundImage:
+                    'url("https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80")',
                 }}
               ></div>
-              <h3 className="text-xl font-semibold text-ashoka-dark">Michael Brown</h3>
+              <h3 className="text-xl font-semibold text-ashoka-dark">
+                Michael Brown
+              </h3>
               <p className="text-ashoka-gray">Sales Manager</p>
-            </div>
+            </div> */}
 
-            {/* Team Member 4 */}
-            <div className="text-center">
-              <div 
+      {/* Team Member 4 */}
+      {/* <div className="text-center">
+              <div
                 className="mb-4 h-64 rounded-lg bg-cover bg-center"
-                style={{ 
-                  backgroundImage: 'url("https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80")'
+                style={{
+                  backgroundImage:
+                    'url("https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80")',
                 }}
               ></div>
-              <h3 className="text-xl font-semibold text-ashoka-dark">Emily Davis</h3>
+              <h3 className="text-xl font-semibold text-ashoka-dark">
+                Emily Davis
+              </h3>
               <p className="text-ashoka-gray">Customer Relations</p>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Certifications */}
-      <section className="py-16">
+      {/* <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-ashoka-dark mb-2">Our Certifications</h2>
+            <h2 className="text-3xl font-bold text-ashoka-dark mb-2">
+              Our Certifications
+            </h2>
             <p className="text-ashoka-gray max-w-2xl mx-auto">
-              We pride ourselves on meeting industry standards and maintaining high-quality operations.
+              We pride ourselves on meeting industry standards and maintaining
+              high-quality operations.
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
             <div className="bg-gray-200 h-32 w-full rounded flex items-center justify-center">
-              <span className="text-ashoka-gray font-semibold">Certification 1</span>
+              <span className="text-ashoka-gray font-semibold">
+                Certification 1
+              </span>
             </div>
             <div className="bg-gray-200 h-32 w-full rounded flex items-center justify-center">
-              <span className="text-ashoka-gray font-semibold">Certification 2</span>
+              <span className="text-ashoka-gray font-semibold">
+                Certification 2
+              </span>
             </div>
             <div className="bg-gray-200 h-32 w-full rounded flex items-center justify-center">
-              <span className="text-ashoka-gray font-semibold">Certification 3</span>
+              <span className="text-ashoka-gray font-semibold">
+                Certification 3
+              </span>
             </div>
             <div className="bg-gray-200 h-32 w-full rounded flex items-center justify-center">
-              <span className="text-ashoka-gray font-semibold">Certification 4</span>
+              <span className="text-ashoka-gray font-semibold">
+                Certification 4
+              </span>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
