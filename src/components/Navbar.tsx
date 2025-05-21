@@ -32,7 +32,10 @@ const Navbar = () => {
                 alt="Ashoka International Logo"
                 className="logo-img"
               /> */}
-              <h1 className="text-2xl font-bold pl-8">
+              <h1
+                className="text-2xl font-bold pl-8"
+                style={{ color: "#0c71b3" }}
+              >
                 Ashoka International Ltd
               </h1>
             </Link>
