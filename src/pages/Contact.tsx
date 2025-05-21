@@ -1,0 +1,275 @@
+
+import { useState } from "react";
+import { Clock, Mail, MapPin, Phone, Send } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/components/ui/use-toast";
+
+const Contact = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form data submitted:", formData);
+    
+    // Show toast notification
+    toast({
+      title: "Message Sent!",
+      description: "Thank you for contacting us. We'll get back to you soon.",
+    });
+    
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
+  };
+
+  return (
+    <div>
+      {/* Header Section */}
+      <section className="bg-ashoka-blue text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
+            <p className="text-xl max-w-3xl mx-auto">
+              Get in touch with us for inquiries, quotes, or to learn more about our products.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Information */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {/* Address */}
+            <Card className="text-center shadow-md p-6">
+              <CardContent className="pt-6">
+                <div className="flex justify-center mb-4">
+                  <div className="p-4 bg-ashoka-blue rounded-full">
+                    <MapPin className="h-6 w-6 text-white" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-ashoka-dark mb-3">Our Location</h3>
+                <p className="text-ashoka-gray">
+                  123 Business Address<br />
+                  City, State 12345<br />
+                  Country
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Contact Info */}
+            <Card className="text-center shadow-md p-6">
+              <CardContent className="pt-6">
+                <div className="flex justify-center mb-4">
+                  <div className="p-4 bg-ashoka-blue rounded-full">
+                    <Phone className="h-6 w-6 text-white" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-ashoka-dark mb-3">Contact Info</h3>
+                <p className="text-ashoka-gray mb-2">
+                  <span className="font-medium">Phone:</span> +1 234 567 8900
+                </p>
+                <p className="text-ashoka-gray">
+                  <span className="font-medium">Email:</span> info@ashokaintl.com
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Business Hours */}
+            <Card className="text-center shadow-md p-6">
+              <CardContent className="pt-6">
+                <div className="flex justify-center mb-4">
+                  <div className="p-4 bg-ashoka-blue rounded-full">
+                    <Clock className="h-6 w-6 text-white" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-ashoka-dark mb-3">Business Hours</h3>
+                <p className="text-ashoka-gray mb-2">
+                  <span className="font-medium">Monday - Friday:</span><br />
+                  8:00 AM - 6:00 PM
+                </p>
+                <p className="text-ashoka-gray">
+                  <span className="font-medium">Saturday:</span><br />
+                  9:00 AM - 4:00 PM
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            {/* Contact Form */}
+            <div>
+              <h2 className="text-2xl font-bold text-ashoka-dark mb-6">Send Us a Message</h2>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="space-y-2">
+                  <Label htmlFor="name">Your Name</Label>
+                  <Input
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email Address</Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="phone">Phone Number</Label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="message">Your Message</Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    rows={6}
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <Button type="submit" className="w-full bg-ashoka-blue hover:bg-ashoka-dark">
+                  <Send className="mr-2 h-4 w-4" />
+                  Send Message
+                </Button>
+              </form>
+            </div>
+
+            {/* Map */}
+            <div>
+              <h2 className="text-2xl font-bold text-ashoka-dark mb-6">Our Location</h2>
+              <div className="h-96 bg-gray-300 rounded"></div>
+              <p className="mt-4 text-ashoka-gray">
+                <MapPin className="inline-block mr-2 h-5 w-5 text-ashoka-blue" />
+                123 Business Address, City, State 12345, Country
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-ashoka-lightgray">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-ashoka-dark mb-2">Frequently Asked Questions</h2>
+            <p className="text-ashoka-gray max-w-2xl mx-auto">
+              Find answers to common questions about our products and services.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* FAQ Item 1 */}
+            <Card className="shadow-md">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-ashoka-dark mb-2">Do you offer delivery services?</h3>
+                <p className="text-ashoka-gray">
+                  Yes, we offer delivery services for orders above a certain value. Delivery charges may apply based on your location and order size. Please contact us for specific details.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* FAQ Item 2 */}
+            <Card className="shadow-md">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-ashoka-dark mb-2">What payment methods do you accept?</h3>
+                <p className="text-ashoka-gray">
+                  We accept various payment methods including cash, credit/debit cards, bank transfers, and mobile money. Corporate clients can also set up credit accounts with proper documentation.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* FAQ Item 3 */}
+            <Card className="shadow-md">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-ashoka-dark mb-2">Can I return products if they don't meet my requirements?</h3>
+                <p className="text-ashoka-gray">
+                  We have a return policy for products in their original condition. Returns must be made within 7 days of purchase with a valid receipt. Please note that some products may not be eligible for return.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* FAQ Item 4 */}
+            <Card className="shadow-md">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-ashoka-dark mb-2">Do you offer bulk discounts?</h3>
+                <p className="text-ashoka-gray">
+                  Yes, we offer discounts for bulk purchases. The discount rates vary depending on the products and quantities. Please contact our sales team to discuss your specific requirements.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-ashoka-blue text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold mb-4">Need Immediate Assistance?</h2>
+            <p className="max-w-2xl mx-auto mb-8 text-blue-100">
+              Our customer service team is available to help you with any questions or concerns.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Button 
+                className="bg-white text-ashoka-blue hover:bg-ashoka-orange hover:text-white"
+                asChild
+              >
+                <a href="tel:+12345678900">
+                  <Phone className="mr-2 h-4 w-4" />
+                  Call Us Now
+                </a>
+              </Button>
+              <Button 
+                variant="outline"
+                className="bg-transparent text-white border-white hover:bg-white hover:text-ashoka-blue"
+                asChild
+              >
+                <a href="mailto:info@ashokaintl.com">
+                  <Mail className="mr-2 h-4 w-4" />
+                  Email Us
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Contact;
