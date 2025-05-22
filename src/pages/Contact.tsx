@@ -118,7 +118,7 @@ const Contact = () => {
                 <p className="text-ashoka-gray">
                   <span className="font-medium">Saturday:</span>
                   <br />
-                  9:00 AM - 4:00 PM
+                  8:00 AM - 4:00 PM
                 </p>
               </CardContent>
             </Card>

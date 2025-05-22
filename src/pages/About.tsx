@@ -38,7 +38,7 @@ const About = () => {
                 <div className="h-1 w-20 bg-ashoka-orange"></div>
               </div>
               <p className="text-ashoka-gray mb-6">
-                Founded in 2010, Ashoka International Ltd started as a small
+                Founded in 2007, Ashoka International Ltd started as a small
                 hardware store with a big vision - to provide complete hardware
                 solutions to the construction industry. Over the years, we have
                 grown significantly, expanding our product range and customer

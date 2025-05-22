@@ -28,7 +28,7 @@ const Footer = () => {
               needs.
             </p>
             <div className="flex space-x-4 mb-4">
-              <a href="#" className="text-gray-300 hover:text-white">
+              {/* <a href="#" className="text-gray-300 hover:text-white">
                 <Facebook size={20} />
               </a>
               <a href="#" className="text-gray-300 hover:text-white">
@@ -36,7 +36,7 @@ const Footer = () => {
               </a>
               <a href="#" className="text-gray-300 hover:text-white">
                 <Linkedin size={20} />
-              </a>
+              </a> */}
             </div>
           </div>
 

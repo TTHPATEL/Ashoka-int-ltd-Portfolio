@@ -263,7 +263,7 @@ const Home = () => {
               </p>
               <div>
                 <p className="font-semibold text-ashoka-dark">John Doe</p>
-                <p className="text-sm text-ashoka-gray">ABC Construction</p>
+                <p className="text-sm text-ashoka-gray">Client</p>
               </div>
             </Card>
 
@@ -284,7 +284,7 @@ const Home = () => {
               </p>
               <div>
                 <p className="font-semibold text-ashoka-dark">Jane Smith</p>
-                <p className="text-sm text-ashoka-gray">XYZ Builders</p>
+                <p className="text-sm text-ashoka-gray">Client</p>
               </div>
             </Card>
 
@@ -305,9 +305,7 @@ const Home = () => {
               </p>
               <div>
                 <p className="font-semibold text-ashoka-dark">Mike Johnson</p>
-                <p className="text-sm text-ashoka-gray">
-                  Johnson Home Renovations
-                </p>
+                <p className="text-sm text-ashoka-gray">Client</p>
               </div>
             </Card>
           </div>
