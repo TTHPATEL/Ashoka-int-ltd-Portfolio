@@ -48,6 +48,7 @@ const productsData = {
     "Toolboxes & storage solutions",
     "Electrical tools & testers",
   ],
+  Other: ["Other"],
 };
 
 const QuoteForm = () => {
