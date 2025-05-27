@@ -260,10 +260,17 @@ const Products = () => {
               <Filter className="mr-2 h-4 w-4" />
               Filter
             </Button>
-            <Button className="flex items-center bg-ashoka-orange hover:bg-ashoka-blue">
-              <Download className="mr-2 h-4 w-4" />
-              Download Catalog
-            </Button>
+            <a
+              href="/path-to-catalogue.pdf"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="flex items-center bg-ashoka-orange hover:bg-ashoka-blue text-white">
+                <Download className="mr-2 h-4 w-4" />
+                Download Catalog
+              </Button>
+            </a>
           </div>
 
           {/* Product Tabs */}

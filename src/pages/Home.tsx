@@ -381,13 +381,27 @@ const Home = () => {
               >
                 <Link to="/contact">Contact Us</Link>
               </Button>
-              <Button
-                variant="outline"
-                className="bg-transparent text-white border-white hover:bg-white hover:text-ashoka-blue"
+              <a
+                href="/path-to-catalogue.pdf"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Download className="mr-2 h-4 w-4" />
-                Download Catalog
-              </Button>
+                <a
+                  href="/path-to-catalogue.pdf"
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    variant="outline"
+                    className="text-ashoka-blue border-ashoka-blue hover:bg-ashoka-blue hover:text-white flex items-center"
+                  >
+                    <Download className="mr-2 h-4 w-4" />
+                    Download Catalogue
+                  </Button>
+                </a>
+              </a>
             </div>
           </div>
         </div>

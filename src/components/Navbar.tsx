@@ -67,9 +67,11 @@ const Navbar = () => {
             >
               Contact
             </Link>
-            <Button className="bg-ashoka-orange hover:bg-ashoka-blue text-white">
-              Get a Quote
-            </Button>
+            <Link to="/quote">
+              <Button className="bg-ashoka-orange hover:bg-ashoka-blue text-white">
+                Get a Quote
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -121,9 +123,11 @@ const Navbar = () => {
             >
               Contact
             </Link>
-            <Button className="w-full bg-ashoka-orange hover:bg-ashoka-blue text-white mt-2">
-              Get a Quote
-            </Button>
+            <Link to="/quote" onClick={toggleMenu}>
+              <Button className="w-full bg-ashoka-orange hover:bg-ashoka-blue text-white mt-2">
+                Get a Quote
+              </Button>
+            </Link>
           </div>
         </div>
       )}
