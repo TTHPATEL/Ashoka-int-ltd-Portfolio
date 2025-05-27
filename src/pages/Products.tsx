@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Download, Filter, Search } from "lucide-react";
+import { Download, Filter, Link, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -334,19 +334,28 @@ const Products = () => {
               Contact us for specific requirements or to check availability.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button
-                className="bg-ashoka-blue hover:bg-ashoka-dark text-white"
-                asChild
+              <Link to="/contact">
+                <Button
+                  className="bg-ashoka-blue hover:bg-ashoka-dark text-white"
+                  asChild
+                >
+                  <a href="/contact">Contact Us</a>
+                </Button>
+              </Link>
+              <a
+                href="/const_catalogue.pdf"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <a href="/contact">Contact Us</a>
-              </Button>
-              <Button
-                variant="outline"
-                className="border-ashoka-blue text-ashoka-blue hover:bg-ashoka-blue hover:text-white"
-              >
-                <Download className="mr-2 h-4 w-4" />
-                Download Full Catalog
-              </Button>
+                <Button
+                  variant="outline"
+                  className="border-ashoka-blue text-ashoka-blue hover:bg-ashoka-blue hover:text-white"
+                >
+                  <Download className="mr-2 h-4 w-4" />
+                  Download Full Catalog
+                </Button>
+              </a>
             </div>
           </div>
         </div>
