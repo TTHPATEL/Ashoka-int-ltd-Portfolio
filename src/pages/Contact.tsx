@@ -112,7 +112,7 @@ const Contact = () => {
                   +256 755 344375
                 </p>
                 <p className="text-ashoka-gray">
-                  <span className="font-medium">Email:</span>{" "}
+                  <span className="font-medium">Email:</span> <br />
                   ashokainternational07@gmail.com <br />
                   hemangjoshi10@gmail.com
                 </p>
@@ -322,7 +322,7 @@ const Contact = () => {
                 className="bg-white text-ashoka-blue hover:bg-ashoka-orange hover:text-white"
                 asChild
               >
-                <a href="tel:+12345678900">
+                <a href="tel:+256755968455">
                   <Phone className="mr-2 h-4 w-4" />
                   Call Us Now
                 </a>
@@ -332,7 +332,7 @@ const Contact = () => {
                 className="bg-transparent text-white border-white hover:bg-white hover:text-ashoka-blue"
                 asChild
               >
-                <a href="mailto:info@ashokaintl.com">
+                <a href="mailto:ashokainternational07@gmail.com">
                   <Mail className="mr-2 h-4 w-4" />
                   Email Us
                 </a>
