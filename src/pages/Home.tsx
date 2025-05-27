@@ -7,6 +7,7 @@ import aboutImage from "../assets/images/Ashoka_Logo.jpg"; // Adjust path as nee
 import constructionImg from "../assets/images/catergory/CSM_Images.jpg"; // adjust path as needed
 import paintingImg from "../assets/images/catergory/Painting.jpg"; // adjust path as needed
 import tool_and_equip_img from "../assets/images/catergory/Tools_and_Equip.jpg"; // adjust path as needed
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const Home = () => {
   return (
@@ -337,6 +338,8 @@ const Home = () => {
                 <Download className="mr-2 h-4 w-4" />
                 Download Catalog
               </Button>
+
+              <FloatingWhatsApp />
             </div>
           </div>
         </div>

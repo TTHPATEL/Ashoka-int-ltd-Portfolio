@@ -89,12 +89,32 @@ const Contact = () => {
                 <h3 className="text-xl font-semibold text-ashoka-dark mb-3">
                   Contact Info
                 </h3>
-                <p className="text-ashoka-gray mb-2">
-                  <span className="font-medium">Phone:</span> +256 742 092892
+                {/* <p className="text-ashoka-gray mb-2">
+                  <span className="font-medium">Phone:</span> +256 755 968455{" "}
+                  {"             "} <br />
+                  +256 755 344375
+                </p> */}
+                {/* <p className="text-ashoka-gray mb-2">
+                  <div className="flex">
+                    <span className="font-medium w-20">Phone:</span>
+                    <span>+256 755 968455</span>
+                  </div>
+                  <div className="flex">
+                    <span className="w-20"></span>
+                    <span>+256 755 344375</span>
+                  </div>
+                </p> */}
+                <p className="text-ashoka-gray">
+                  <span className="font-medium">
+                    Phone: <br />
+                  </span>
+                  +256 755 968455 <br />
+                  +256 755 344375
                 </p>
                 <p className="text-ashoka-gray">
                   <span className="font-medium">Email:</span>{" "}
-                  ashokainternational07@gmail.com
+                  ashokainternational07@gmail.com <br />
+                  hemangjoshi10@gmail.com
                 </p>
               </CardContent>
             </Card>
@@ -201,9 +221,12 @@ const Contact = () => {
                 ></iframe>
               </div>
               <p className="mt-4 text-ashoka-gray">
-                <MapPin className="inline-block mr-2 h-5 w-5 text-ashoka-blue" />
-                Plot No. 3, Mulwana (Kibira) road Industrial area, P.O.Box 20144
-                Kampala Uganda
+                {/* <MapPin className="inline-block mr-2 h-5 w-5 text-ashoka-blue" /> */}
+                {/* Plot No. 3, Mulwana (Kibira) road Industrial area, P.O.Box 20144
+                Kampala Uganda */}
+                Clients in the Democratic Republic of Congo, South Sudan,
+                Rwanda, Burundi, and other parts of East Africa also procure our
+                materials.
               </p>
             </div>
           </div>

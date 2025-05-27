@@ -51,10 +51,14 @@ const About = () => {
                 includes everything from construction materials to painting
                 supplies and tools.
               </p>
-              <p className="text-ashoka-gray">
+              <p className="text-ashoka-gray mb-6">
                 At Ashoka International, we believe in building long-term
                 relationships with our customers by consistently meeting their
                 needs and exceeding their expectations.
+              </p>
+              <p className="text-ashoka-gray font-semibold">
+                A trusted name in hardware, serving clients with quality
+                products for more than 17 years.
               </p>
             </div>
           </div>
