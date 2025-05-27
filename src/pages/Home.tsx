@@ -7,7 +7,11 @@ import aboutImage from "../assets/images/Ashoka_Logo.jpg"; // Adjust path as nee
 import constructionImg from "../assets/images/catergory/CSM_Images.jpg"; // adjust path as needed
 import paintingImg from "../assets/images/catergory/Painting.jpg"; // adjust path as needed
 import tool_and_equip_img from "../assets/images/catergory/Tools_and_Equip.jpg"; // adjust path as needed
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+// import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import plasconLogo from "../assets/images/logo/plasconlogo.png";
+import steelTubeLogo from "../assets/images/logo/SteelandTube-logo.png";
+import himaCementLogo from "../assets/images/logo/himalogo.png";
+import fosrocLogo from "../assets/images/logo/Fosroclogo.jpg";
 
 const Home = () => {
   return (
@@ -232,6 +236,52 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {/* Authorized Dealer Section */}
+      <section className="py-8 bg-gray-50 border-t border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl font-bold text-ashoka-dark mb-4">
+            Authorized Dealer Of
+          </h2>
+
+          {/* Scrolling container */}
+          <div className="overflow-hidden whitespace-nowrap">
+            <div
+              className="inline-flex items-center space-x-20 animate-scroll" // increased space-x-12 to space-x-20
+              style={{ minWidth: "max-content" }}
+            >
+              {[plasconLogo, steelTubeLogo, himaCementLogo, fosrocLogo].map(
+                (logo, i) => (
+                  <img
+                    key={i}
+                    src={logo}
+                    alt="Logo"
+                    className="h-16 object-contain block"
+                  />
+                )
+              )}
+
+              {/* {[plasconLogo, steelTubeLogo, himaCementLogo, fosrocLogo].map(
+                (logo, i) => (
+                  <img
+                    key={i + 4}
+                    src={logo}
+                    alt="Logo"
+                    className="h-16 object-contain block"
+                  />
+                )
+              )} */}
+            </div>
+          </div>
+
+          {/* Add more margin-top here */}
+          <p className="mt-10 text-ashoka-gray max-w-xl mx-auto">
+            Ashoka International Ltd is an authorized dealer of leading
+            construction brands including Plascon Paints, Steel & Tube, Hima
+            Cement, and Fosroc Waterproofing, ensuring quality and reliability
+            for every project.
+          </p>
+        </div>
+      </section>
 
       {/* Testimonials */}
       <section className="py-16 bg-ashoka-lightgray">
@@ -338,8 +388,6 @@ const Home = () => {
                 <Download className="mr-2 h-4 w-4" />
                 Download Catalog
               </Button>
-
-              <FloatingWhatsApp />
             </div>
           </div>
         </div>
