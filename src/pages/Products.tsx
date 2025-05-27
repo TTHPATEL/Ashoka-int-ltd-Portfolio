@@ -261,7 +261,7 @@ const Products = () => {
               Filter
             </Button>
             <a
-              href="/path-to-catalogue.pdf"
+              href="/const_catalogue.pdf"
               download
               target="_blank"
               rel="noopener noreferrer"

@@ -381,26 +381,20 @@ const Home = () => {
               >
                 <Link to="/contact">Contact Us</Link>
               </Button>
+
               <a
-                href="/path-to-catalogue.pdf"
+                href="/const_catalogue.pdf"
                 download
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <a
-                  href="/path-to-catalogue.pdf"
-                  download
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Button
+                  variant="outline"
+                  className="text-ashoka-blue border-ashoka-blue hover:bg-ashoka-blue hover:text-white flex items-center"
                 >
-                  <Button
-                    variant="outline"
-                    className="text-ashoka-blue border-ashoka-blue hover:bg-ashoka-blue hover:text-white flex items-center"
-                  >
-                    <Download className="mr-2 h-4 w-4" />
-                    Download Catalogue
-                  </Button>
-                </a>
+                  <Download className="mr-2 h-4 w-4" />
+                  Download Catalogue
+                </Button>
               </a>
             </div>
           </div>
