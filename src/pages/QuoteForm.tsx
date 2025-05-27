@@ -1,12 +1,6 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-import { Clock, Mail, MapPin, Phone, Send } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/components/ui/use-toast";
+import { useState, useRef } from "react"; // add useRef import
 
 const productsData = {
   "Construction & Building Materials": [
@@ -56,6 +50,12 @@ const QuoteForm = () => {
     { category: "", product: "", quantity: "" },
   ]);
 
+  // Refs for inputs
+  const nameRef = useRef(null);
+  const emailRef = useRef(null);
+  const phoneRef = useRef(null);
+  const messageRef = useRef(null);
+
   const handleChange = (index, field, value) => {
     const updated = [...productRequests];
     updated[index][field] = value;
@@ -68,19 +68,18 @@ const QuoteForm = () => {
       { category: "", product: "", quantity: "" },
     ]);
   };
-
+  const removeProductRow = (index) => {
+    const updated = productRequests.filter((_, i) => i !== index);
+    setProductRequests(updated);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const name = e.target[0].value.trim();
-    const email = e.target[1].value.trim();
-    const phone = e.target[2].value.trim();
+    const name = nameRef.current.value.trim();
+    const email = emailRef.current.value.trim();
+    const phone = phoneRef.current.value.trim();
+    const message = messageRef.current.value.trim();
 
-    // Message is optional now
-    const messageIndex = 3 * productRequests.length + 3;
-    const message = e.target[messageIndex]?.value.trim() || "";
-
-    // Validate all product selections are complete
     const allProductsValid = productRequests.every(
       (item) => item.category && item.product && item.quantity
     );
@@ -90,7 +89,15 @@ const QuoteForm = () => {
       return;
     }
 
-    // Message is optional, so no validation error if empty
+    const formData = {
+      name,
+      email,
+      phone,
+      message,
+      products: productRequests,
+    };
+
+    console.log("Quote Request Submitted:", formData);
     toast.success("Quote submitted successfully!");
   };
 
@@ -125,6 +132,7 @@ const QuoteForm = () => {
                 Name
               </label>
               <input
+                ref={nameRef}
                 type="text"
                 className="w-full border border-gray-300 rounded px-3 py-2"
               />
@@ -134,6 +142,7 @@ const QuoteForm = () => {
                 Email
               </label>
               <input
+                ref={emailRef}
                 type="email"
                 className="w-full border border-gray-300 rounded px-3 py-2"
               />
@@ -143,6 +152,7 @@ const QuoteForm = () => {
                 Phone
               </label>
               <input
+                ref={phoneRef}
                 type="tel"
                 className="w-full border border-gray-300 rounded px-3 py-2"
               />
@@ -155,7 +165,7 @@ const QuoteForm = () => {
               {productRequests.map((item, index) => (
                 <div
                   key={index}
-                  className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center"
+                  className="grid grid-cols-1 md:grid-cols-4 gap-y-4 gap-x-2 items-center"
                 >
                   <div>
                     <label className="block text-sm text-gray-700">
@@ -211,8 +221,19 @@ const QuoteForm = () => {
                       min={1}
                     />
                   </div>
+                  <div className="flex items-center justify-center">
+                    <button
+                      type="button"
+                      onClick={() => removeProductRow(index)}
+                      className="text-red-500 hover:text-red-700 text-2xl font-bold"
+                      aria-label={`Remove product row ${index + 1}`}
+                    >
+                      &times;
+                    </button>
+                  </div>
                 </div>
               ))}
+
               <Button
                 type="button"
                 className="bg-ashoka-blue text-white hover:bg-ashoka-orange"
@@ -227,10 +248,12 @@ const QuoteForm = () => {
                 Message
               </label>
               <textarea
+                ref={messageRef}
                 className="w-full border border-gray-300 rounded px-3 py-2"
                 rows={4}
               ></textarea>
             </div>
+
             <Button
               type="submit"
               className="bg-ashoka-orange hover:bg-ashoka-blue text-white"

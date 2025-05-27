@@ -1,45 +1,65 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Clock, Mail, MapPin, Phone, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/components/ui/use-toast";
+// import { useToast } from "@/components/ui/use-toast";
+import { toast } from "sonner";
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+  // Refs for inputs
+  const nameRef = useRef(null);
+  const emailRef = useRef(null);
+  const phoneRef = useRef(null);
+  const messageRef = useRef(null);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  // const handleChange = (
+  //   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  // ) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prev) => ({ ...prev, [name]: value }));
+  // };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   console.log("Form data submitted:", formData);
+
+  //   // Show toast notification
+  //   toast.success("Message submitted successfully!");
+
+  //   // Reset form
+  //   setFormData({
+  //     name: "",
+  //     email: "",
+  //     phone: "",
+  //     message: "",
+  //   });
+  // };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form data submitted:", formData);
 
-    // Show toast notification
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you soon.",
-    });
+    const name = nameRef.current.value.trim();
+    const email = emailRef.current.value.trim();
+    const phone = phoneRef.current.value.trim();
+    const message = messageRef.current.value.trim();
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
+    if (!name || !email || !phone) {
+      toast.error("Please fill in all required fields.");
+      return;
+    }
+
+    const collectedformData = {
+      name,
+      email,
+      phone,
+      message,
+    };
+
+    console.log("Contact Us Request Submitted:", collectedformData);
+    toast.success("Message Send successfully!");
   };
 
   return (
@@ -153,13 +173,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="name">Your Name</Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                  />
+                  <Input id="name" name="name" ref={nameRef} required />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email Address</Label>
@@ -167,20 +181,13 @@ const Contact = () => {
                     id="email"
                     name="email"
                     type="email"
-                    value={formData.email}
-                    onChange={handleChange}
+                    ref={emailRef}
                     required
                   />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone Number</Label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                  />
+                  <Input id="phone" name="phone" ref={phoneRef} required />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Your Message</Label>
@@ -188,9 +195,7 @@ const Contact = () => {
                     id="message"
                     name="message"
                     rows={6}
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
+                    ref={messageRef}
                   />
                 </div>
                 <Button
